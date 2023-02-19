@@ -35,3 +35,25 @@ impl Particle {
         }
     }
 }
+
+#[allow(dead_code)]
+fn create_particles(n: i32) -> Vec<Particle> {
+    let mut vec: Vec<Particle> = Vec::new();
+    for _ in 0..n {
+        let p = Particle {
+            pos: Vector3 {
+                x: rand::random::<f64>() * 1e7,
+                y: rand::random::<f64>() * 1e7,
+                z: 0.,
+            },
+            vel: Vector3 {
+                x: 0.,
+                y: 0.,
+                z: 0.,
+            },
+            mass: 1e15,
+        };
+        vec.push(p)
+    }
+    return vec;
+}
